@@ -79,7 +79,7 @@ public class scorescript : MonoBehaviour
 
         }
         StartCoroutine(checkScore());
-        ScoreText.text = "Score: " +myScore;
+        ScoreText.text = "" +myScore;
     }
     public IEnumerator attacked()
     {

@@ -18,6 +18,8 @@ public class TreasureScript : MonoBehaviour
     public string token;
     public Text StatusText;
     public GameObject scores;
+    public GameObject gaingem;
+    public GameObject attackgem;
     void Start()
     {
         Globvar = GameObject.Find("GlobalPlayerData");
@@ -99,16 +101,32 @@ public class TreasureScript : MonoBehaviour
                 Debug.Log("ERROR: " + www.error);
 
             }
+            attackgem.SetActive(true);
+            StatusText.text = "You Attacked An Enemy!";
+            openText.text = "You Get " + value + " Points!";
+            myanimator.SetInteger("opened", 1);
+            yield return new WaitForSeconds(1);
+            myanimator.SetInteger("opened", 0);
+            yield return new WaitForSeconds(1);
+            openText.text = "";
+            StatusText.text = "";
+            attackgem.SetActive(false);
+            gameObject.SetActive(false);
         }
-        StatusText.text = "You Attacked An Enemy!";
-        openText.text = "You Get " + value + " Points!";
-        myanimator.SetInteger("opened", 1);
-        yield return new WaitForSeconds(1);
-        myanimator.SetInteger("opened", 0);
-        yield return new WaitForSeconds(1);
-        openText.text = "";
-        StatusText.text = "";
-        gameObject.SetActive(false);
+        else
+        {
+            gaingem.SetActive(true);
+            openText.text = "You Get " + value + " Points!";
+            myanimator.SetInteger("opened", 1);
+            yield return new WaitForSeconds(1);
+            myanimator.SetInteger("opened", 0);
+            yield return new WaitForSeconds(1);
+            openText.text = "";
+            StatusText.text = "";
+            gaingem.SetActive(false)
+            gameObject.SetActive(false);
+        }
+        
         
         
 

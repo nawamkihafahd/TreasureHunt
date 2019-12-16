@@ -64,6 +64,7 @@
     <Compile Include="Assets\chestscript.cs" />
     <Compile Include="Assets\EndTextScript.cs" />
     <Compile Include="Assets\GameControllerScript.cs" />
+    <Compile Include="Assets\GemScript.cs" />
     <Compile Include="Assets\PlayerDataScript.cs" />
     <Compile Include="Assets\RoomController.cs" />
     <Compile Include="Assets\scorescript.cs" />

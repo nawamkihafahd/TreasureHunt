@@ -24,7 +24,7 @@ public class EndTextScript : MonoBehaviour
         {
             ResultText.text = "Its A Tie";
         }
-        ScoreText.text = "Score: " + GameObject.Find("GlobalPlayerData").GetComponent<PlayerDataScript>().myScore;
+        ScoreText.text = "" + GameObject.Find("GlobalPlayerData").GetComponent<PlayerDataScript>().myScore;
     }
 
     // Update is called once per frame
